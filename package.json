@@ -1,0 +1,19 @@
+{
+  "name": "hypnos-js",
+  "version": "0.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "commander": "^2.18.0",
+    "express": "^4.16.3",
+    "inquirer": "^6.2.0",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.1",
+    "sequelize-cli": "^4.1.1"
+  }
+}
