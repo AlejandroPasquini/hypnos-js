@@ -3,6 +3,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable("client_services", {
       id: {
+        unique: true,
         allowNull: false,
         primaryKey: true,
         type: Sequelize.UUID

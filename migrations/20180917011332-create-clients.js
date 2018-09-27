@@ -8,6 +8,7 @@ module.exports = {
           primaryKey: true
       },
       uuid: {
+        unique: true,
         allowNull: false,
         primaryKey: true,
         type: Sequelize.UUID
@@ -19,6 +20,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       email: {
+        unique: true,
         type: Sequelize.STRING
       },
       alternative_emails: {

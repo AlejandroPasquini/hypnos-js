@@ -3,9 +3,10 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable("records", {
       id: {
-        type: Sequelize.INTEGER,
+        unique: true,
         autoIncrement: true,
-        primaryKey: true
+        primaryKey: true,
+        type: Sequelize.INTEGER
       },
       client_service_id: {
         type: Sequelize.INTEGER,

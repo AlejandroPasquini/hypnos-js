@@ -1,34 +1,27 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("payment_systems", {
+    return queryInterface.createTable('service_types', {
       id: {
-        unique: true,
+        allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       name: {
         type: Sequelize.STRING
       },
-      model: {
-        type: Sequelize.STRING
-      },
-      custon_days: {
-        allowNull: false,
-        type: Sequelize.INTEGER
-      },
-      created_at: {
+      createdAt: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updated_at: {
+      updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
       }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('payment_systems');
+    return queryInterface.dropTable('service_types');
   }
 };

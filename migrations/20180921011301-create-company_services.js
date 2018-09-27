@@ -3,13 +3,14 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable("company_services", {
       id: {
-        type: Sequelize.INTEGER,
+        unique: true,
         autoIncrement: true,
-        primaryKey: true
+        primaryKey: true,
+        type: Sequelize.INTEGER
       },
       company_uuid: {
-        type: Sequelize.UUID,
         allowNull: false,
+        type: Sequelize.UUID
       },
       payment_system_id: {
         type: Sequelize.INTEGER,
