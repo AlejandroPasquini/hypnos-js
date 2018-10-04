@@ -1,10 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const service - types = sequelize.define('service-types', {
-    name: DataTypes.STRING
+  const service_types = sequelize.define('service_types', {
+    name: DataTypes.STRING,
+    createdAt: { type: DataTypes.DATE, allowNull: false},
+    updatedAt: { type: DataTypes.DATE, allowNull: false}
   }, {});
-  service - types.associate = function(models) {
+  service_types.associate = function(models) {
     // associations can be defined here
   };
-  return service - types;
+  return service_types;
 };

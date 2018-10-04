@@ -7,6 +7,7 @@ module.exports = {
         id: 1,
         name: 'Month',
         model: 'month',
+        custom_days: null,
         created_at: "2018-01-01",
         updated_at:  "2018-01-01"
       }], {});

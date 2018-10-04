@@ -7,6 +7,7 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
+const decamelize = require('decamelize');
 
 let sequelize;
 if (config.use_env_variable) {
@@ -14,6 +15,14 @@ if (config.use_env_variable) {
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
+
+sequelize.addHook('beforeDefine', (attributes) => {
+  Object.keys(attributes).forEach((key) => {
+    if (typeof attributes[key] !== "function" ) {
+       attributes[key].field = decamelize(key);
+    }
+  });
+});
 
 fs
   .readdirSync(__dirname)

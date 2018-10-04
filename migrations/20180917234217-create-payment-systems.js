@@ -14,8 +14,8 @@ module.exports = {
       model: {
         type: Sequelize.STRING
       },
-      custon_days: {
-        allowNull: false,
+      custom_days: {
+        allowNull: true,
         type: Sequelize.INTEGER
       },
       created_at: {

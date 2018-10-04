@@ -6,7 +6,8 @@ const Client = sequelize.define('clients', {
  firstname: { type: DataTypes.STRING, allowNull: false},
  lastname: { type: DataTypes.STRING, allowNull: false},
  email: { type: DataTypes.STRING, allowNull: false},
- alternative_emails: { type: DataTypes.TEXT, allowNull: true  }
+ alternativeEmails: { type: DataTypes.TEXT, allowNull: true  },
+ timestamps: true
 });
 
 Client.associate = function(models) {
