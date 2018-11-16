@@ -24,8 +24,12 @@ module.exports = {
         type: Sequelize.DECIMAL,
         allowNull: false,
       },
-      start_date: {
+      purchase_date: {
         allowNull: false,
+        type: Sequelize.DATEONLY
+      },
+      start_date: {
+        allowNull: true,
         type: Sequelize.DATEONLY
       },
       end_date: {
