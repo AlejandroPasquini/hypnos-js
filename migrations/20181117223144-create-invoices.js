@@ -1,34 +1,24 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("records", {
+    return queryInterface.createTable('invoices', {
       id: {
-        unique: true,
+        allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      client_service_id: {
-        type: Sequelize.INTEGER,
+      uuid: {
+        unique: true,
         allowNull: false,
+        primaryKey: true,
+        type: Sequelize.UUID
       },
-      price: {
-        type: Sequelize.DECIMAL,
-        allowNull: true,
-      },
-      payment: {
-        type: Sequelize.DECIMAL,
-        allowNull: false,
-      },
-      record_status: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: 0
-      },
-      start_period: {
+      due_date: {
         allowNull: false,
         type: Sequelize.DATEONLY
       },
-      end_period: {
+      expirated_at: {
         allowNull: false,
         type: Sequelize.DATEONLY
       },
@@ -43,6 +33,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('records');
+    return queryInterface.dropTable('invoices');
   }
 };
